@@ -69,5 +69,6 @@ if button:
         "question": question
     }
     )
-    st.write(res.status_code)
-    st.info(res.json()["msg"])
+    if res.status_code == 200:
+        st.danger(res.json()["msg"])
+    
