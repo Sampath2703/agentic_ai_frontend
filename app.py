@@ -69,6 +69,13 @@ if button:
         "question": question
     }
     )
-    if res.status_code == 200:
-        st.warning(res.json()["msg"])
     
+    data = res.json()["msg"]
+
+    if res.status_code == 200:
+        st.write(f"City: {data['city']}")
+        st.write(f"Temperature: {data['temp']}°C")
+        st.write(f"Humidity: {data['humidity']}%")
+        st.write(f"Wind Speed: {data['wind_speed']} m/s")
+
+        st.info(data["answer"])
