@@ -70,5 +70,5 @@ if button:
     }
     )
     if res.status_code == 200:
-        st.danger(res.json()["msg"])
+        st.warning(res.json()["msg"])
     
