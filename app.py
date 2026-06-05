@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 
-backend_url = "http://127.0.0.1:8000"
+backend_url = st.secrets["backend_url"]
 
 st.markdown(
     """
@@ -62,7 +62,12 @@ question = st.text_input("", key="question_input")
 button = st.button("Get Weather")
 
 if button:
-    res=requests.post(f"{backend_url}/get_weather",params={ "city": city,
-        "question": question})
-    
+    res = requests.post(
+    f"{backend_url}/get_weather",
+    json={
+        "city": city,
+        "question": question
+    }
+    )
+    st.write(res.status_code)
     st.info(res.json()["msg"])
