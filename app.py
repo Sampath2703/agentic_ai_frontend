@@ -73,9 +73,9 @@ if button:
     data = res.json()["msg"]
 
     if res.status_code == 200:
-        st.write(f"City: {data['city']}")
-        st.write(f"Temperature: {data['temp']}°C")
-        st.write(f"Humidity: {data['humidity']}%")
-        st.write(f"Wind Speed: {data['wind_speed']} m/s")
+        st.warning(f"City: {data['city']}")
+        st.warning(f"Temperature: {data['temp']}°C")
+        st.warning(f"Humidity: {data['humidity']}%")
+        st.warning(f"Wind Speed: {data['wind_speed']} m/s")
 
-        st.info(data["answer"])
+        st.warning(data["answer"])
