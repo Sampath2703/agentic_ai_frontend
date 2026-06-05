@@ -81,4 +81,4 @@ if button:
         st.warning(f"Humidity: {data['humidity']}%")
         st.warning(f"Wind Speed: {data['wind_speed']} m/s")
 
-        st.write(data["answer"])
+        st.info(data["answer"])
