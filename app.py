@@ -16,7 +16,7 @@ st.markdown(
     }
 
     h1 {
-        color: white !important;
+        color: brown !important;
         text-align: center;
         font-size: 36px;
         font-weight: 700;
