@@ -69,16 +69,10 @@ if button:
         "question": question
     }
     )
-    
-    data = res.json()["msg"]
+
+    st.write("Status:", res.status_code)
+    st.write("Raw Response:")
+    st.code(res.text)
 
     if res.status_code == 200:
-        
-
-
-        st.write(f"City: {data['city']}")
-        st.write(f"Temperature: {data['temp']}°C")
-        st.write(f"Humidity: {data['humidity']}%")
-        st.write(f"Wind Speed: {data['wind_speed']} m/s")
-
-        st.write(data["answer"])
+        data = res.json()["msg"]
